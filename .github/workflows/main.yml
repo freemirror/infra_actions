@@ -57,7 +57,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }} # Если ваш ssh-ключ защищён фразой-паролем
         script: |
           # Выполняет pull образа с DockerHub
-          sudo docker pull freemirror/infra
+          sudo docker pull freemirror/infra:v1.00.0000
           #остановка всех контейнеров
           sudo docker stop $(sudo docker ps -a -q)
-          sudo docker run --rm -d -p 5000:5000 freemirror/infra
+          sudo docker run --rm -d -p 5000:5000 freemirror/infra:v1.00.0000
